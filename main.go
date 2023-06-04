@@ -48,16 +48,7 @@ func main() {
 			InputLong: v.Long,
 			Status:    "OK",
 		}
-		// placeName, err := searchSuggestion(v.Text)
-		// if err != nil {
-		// 	dataErr := dataErr{
-		// 		Index: i,
-		// 		Text:  v.Text,
-		// 		Error: err.Error(),
-		// 	}
-		// 	outputErr = append(outputErr, dataErr)
-		// 	continue
-		// }
+
 		if err == nil {
 			label, confidence, lat, long, err := searchPlace(v.Text)
 			if err != nil {
@@ -196,33 +187,6 @@ func writeOutputErr(data []dataErr, filename string) (err error) {
 		}
 	}
 	return nil
-}
-
-// get place name suggestion based on input
-func searchSuggestion(text string) (placeName string, err error) {
-	input := location.SearchPlaceIndexForSuggestionsInput{
-		IndexName:       &appConfig.MapIndex,
-		Text:            &text,
-		FilterCountries: appConfig.Countries,
-	}
-
-	output, err := locClient.SearchPlaceIndexForSuggestions(context.Background(), &input)
-	if err != nil {
-		log.Println(err)
-		return
-	}
-	if len(output.Results) == 0 {
-		err = fmt.Errorf("no result found")
-		log.Println(err)
-		return
-	}
-
-	placeName = *output.Results[0].Text
-	for _, v := range output.Results {
-		log.Println(*v.Text)
-	}
-
-	return
 }
 
 // get place geometry based on input
