@@ -1,0 +1,10 @@
+{
+    "ALSRegion": "ap-southeast-1",
+    "MapIndex": "sandbox",
+    "Countries": [
+        "IDN"
+    ],
+    "ConfidenceThreshold": 0.8,
+    "InputFile": "sample.csv",
+    "OutputFile": "verify"
+}
