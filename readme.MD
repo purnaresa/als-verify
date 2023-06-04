@@ -29,12 +29,14 @@ The application produces the following output:
 **Input**: 
 
 Place,Lat,Long
+
 "Chase Plaza, Jl. Jenderal Sudirman No.21, RT.10/RW.1, Kuningan, Karet, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12920",-6.21015, 106.82187
 
 **Output**:
 
 Index,InputText,InputLat,InputLong,OutputText,OutputLat,OutputLong,Confidence,Distance,Status
-1,"Chase Plaza, Jl. Jenderal Sudirman No.21, RT.10/RW.1, Kuningan, Karet, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12920",-6.210156,106.821871,"Chase Plaza, Jl. Jenderal Sudirman Kav. 21, Karet, Setiabudi, Kota Jakarta Selatan, Dki Jakarta, Indonesia, 12920",-6.209996,106.821800,1.000000,0.019,OK
+
+1,"Chase Plaza, Jl. Jenderal Sudirman No.21, RT.10/RW.1, Kuningan, Karet, Kecamatan Setiabudi, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12920",-6.210156,106.821871,"Chase Plaza, Jl. Jenderal Sudirman Kav. 21, Karet, Setiabudi, Kota Jakarta Selatan, Dki Jakarta, Indonesia, 12920",-6.209996,106.821800,1.000000,**0.019**,OK
 
 **Insight**: ALS's data for "Chase Plaza" building is similar to the current dataset, with a difference of only 19 meters.
 ***
@@ -59,6 +61,4 @@ Index,InputText,InputLat,InputLong,OutputText,OutputLat,OutputLong,Confidence,Di
    - ConfidenceThreshold: The minimum confidence level to track.
    - InputFile: The input CSV file name from the prerequisites.
    - OutputFile: The prefix of the output file of the process.
-3. Run the application using the command `go run main.go
-
-`.
+3. Run the application using the command `go run main.go`.
